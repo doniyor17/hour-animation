@@ -1,0 +1,153 @@
+*, 
+*::before, 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.display {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: rgba(0, 0, 0, 0.1);
+}
+.cadran {
+    width: 800px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);;
+}
+.one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .eleven, .twelwe {
+    position: absolute;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+.twelwe {
+    top: 0;
+}
+.one {
+    top: 57px;
+    right: 192px;
+}
+.two {
+    top: 197px;
+    right: 60px;
+}
+.three {
+    top: 385px;
+    right: 10px;
+}
+.four {
+    bottom: 197px;
+    right: 60px;
+}
+.five {
+    bottom: 57px;
+    right: 192px;
+}
+.six {
+    bottom: 0;
+}
+.seven {
+    bottom: 57px;
+    left: 192px;
+}
+.eight {
+    bottom: 197px;
+    left: 60px;
+}
+.nine {
+    top: 385px;
+    left: 10px;
+}
+.ten {
+    top: 197px;
+    left: 60px;
+}
+.eleven {
+    top: 57px;
+    left: 192px;
+}
+.dot {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 50%;
+    background-color: #ddd;
+    box-shadow: 0 0 10px #999;
+}
+.hours {
+    width: 10px;
+    height: 200px;
+    position: absolute;
+    bottom: 50%;
+    border-radius: 10px;
+    transform-origin: bottom center;
+    background-color: #ddd;
+    transition: linear;
+    animation: myHour infinite linear;
+    animation-duration: 216000s;
+}
+@keyframes myHour {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+.minutes {
+    width: 7px;
+    height: 300px;
+    position: absolute;
+    bottom: 50%;
+    border-radius: 10px;
+    transform-origin: bottom center;
+    background-color: #ddd;
+    transition: linear;
+    animation: minute infinite linear;
+    animation-duration: 3600s;
+}
+@keyframes minute {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+.seconds {
+    width: 5px;
+    height: 350px;
+    position: absolute;
+    border-radius: 15px;
+    bottom: 50%;
+    transform-origin: bottom center;
+    transform: rotateZ(100deg);
+    background-color: #ddd;
+    transition: linear;
+    animation: second infinite linear;
+    animation-duration: 60s;
+}
+@keyframes second {
+    from {
+        transform: rotateZ(0);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
